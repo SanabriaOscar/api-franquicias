@@ -1,0 +1,54 @@
+//post frachises
+
+URL http://localhost:8080/api/frachises
+{
+"name": "test"
+}
+//post branches
+
+URL http://localhost:8080/api/branches
+{
+"name": "test8",
+"franchise": {
+"id": 3
+}
+}
+
+// post products
+
+URL http://localhost:8080/api/products
+
+{
+"name": "tela",
+"stock":8,
+"branch": {
+"id": 1
+}
+}
+
+
+//Agregar un producto a una rama existente
+//post URL: http://localhost:8080/branches/{branchId}/products
+
+{
+"name": "tela,
+"stock": 100
+}
+
+//Actualizar un producto de una rama
+
+// put URL: http://localhost:8080/branches/{branchId}/products/{productId}
+
+{
+"name": "celular",
+"stock": 89
+}
+
+// Eliminar un producto de una rama
+// delete URL: http://localhost:8080/branches/{branchId}/products/{productId}
+
+
+
+
+
+
