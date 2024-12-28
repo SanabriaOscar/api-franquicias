@@ -53,7 +53,8 @@ public class ProductServiceImpl  implements IProductService {
 
     @Override
     public List<Product> getProductWithMaxStockByBranch() {
-        return productRepository.findProductosConMasStockPorBranch();
+        return null;
+        //return productRepository.findProductosConMasStockPorBranch();
     }
 
 

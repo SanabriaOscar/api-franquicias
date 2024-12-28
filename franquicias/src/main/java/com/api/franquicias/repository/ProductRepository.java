@@ -8,6 +8,9 @@ import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product, Long > {
 
-    @Query("SELECT p FROM Producto p WHERE p.stock = (SELECT MAX(p2.stock) FROM Producto p2 WHERE p2.branch = p.branch) ORDER BY p.branch.id")
+    @Query(value = "SELECT * FROM producto p " +
+            "WHERE p.stock = (SELECT MAX(p2.stock) FROM producto p2 WHERE p2.branch_id = p.branch_id) " +
+            "ORDER BY p.branch_id", nativeQuery = true)
     List<Product> findProductosConMasStockPorBranch();
+
 }
