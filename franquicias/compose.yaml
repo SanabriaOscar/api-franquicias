@@ -1,0 +1,22 @@
+version: '3'
+services:
+  franquicias:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/api-db
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=
+    depends_on:
+      - db
+
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=api-db
+      - MYSQL_PASSWORD=
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_USER=
+    ports:
+      - "3306:3306"
